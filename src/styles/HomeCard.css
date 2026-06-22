@@ -664,3 +664,89 @@
     height:400px;
 }
 }
+
+/* ======================
+     RESPONSIVE - CARDS + ABOUT + CONTACT
+     ====================== */
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        gap: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    [class^="shelf"] {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 320px;
+        height: 380px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    [class^="book"] {
+        height: 120px;
+        width: 120px;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        border-radius: 50%;
+    }
+
+    [class^="book"]::after {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+        top: 110%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    [class^="dust"] {
+        height: 300px;
+        width: 100%;
+        margin-top: 60px;
+        position: relative;
+        padding-top: 70px;
+        box-sizing: border-box;
+    }
+
+    .info {
+        margin-top: 0;
+        width: 90%;
+        height: 210px;
+        padding: 20px 10px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .image-placeholder {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-text h1 { font-size: 2.2rem; text-align: center; }
+    .about-text p { text-align: center; }
+    .about-stats { justify-content: center; flex-wrap: wrap; }
+    
+    .contact-wrapper { flex-direction: column; width: 95%; }
+    .contact-left, .contact-right { width: 100%; min-height: auto; padding: 25px; }
+    .contact-left h1, .contact-right h1 { font-size: 2.2rem; margin-bottom: 30px; }
+    
+    .project-content { flex-direction: column; }
+    .project-image-placeholder { width: 100%; max-width: 320px; height: 300px; }
+}
+
+@media (max-width: 420px) {
+    .container { width: 95%; }
+    [class^="shelf"] { max-width: 100%; }
+    .about-text h1 { font-size: 1.8rem; }
+    .image-placeholder { width: 240px; height: 240px; }
+}

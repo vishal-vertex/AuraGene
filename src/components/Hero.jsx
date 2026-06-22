@@ -42,12 +42,20 @@ const Hero = () => {
           </div>
         </div>
 
+        {/* CSS-only hamburger toggle (no JS) */}
+        <input type="checkbox" id="nav-toggle" className="nav-toggle" />
+        <label htmlFor="nav-toggle" className="nav-toggle-label" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
         <div className="headline">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#home" onClick={() => document.getElementById('nav-toggle').checked = false}>Home</a>
+          <a href="#about" onClick={() => document.getElementById('nav-toggle').checked = false}>About</a>
+          <a href="#services" onClick={() => document.getElementById('nav-toggle').checked = false}>Services</a>
+          <a href="#projects" onClick={() => document.getElementById('nav-toggle').checked = false}>Projects</a>
+          <a href="#contact" onClick={() => document.getElementById('nav-toggle').checked = false}>Contact</a>
         </div>
       </div>
 

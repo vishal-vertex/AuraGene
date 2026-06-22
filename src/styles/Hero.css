@@ -151,3 +151,181 @@
 .controls button:active {
   transform: scale(0.96);
 }
+
+/* ======================
+   RESPONSIVE - HERO
+   ====================== */
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60px;
+    padding: 0 4%;
+  }
+
+  .hero-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-name {
+    font-size: 20px;
+  }
+
+  .headline {
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .landing-page {
+    padding-top: 60px; /* avoid content under fixed navbar */
+  }
+
+  .controls {
+    bottom: 20px;
+    left: 20px;
+    gap: 10px;
+  }
+
+  .controls button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-section {
+    height: 56px;
+    padding: 0 3%;
+  }
+
+  .hero-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-name {
+    font-size: 18px;
+  }
+
+  /* conserve space on small screens */
+  .headline {
+    display: none;
+  }
+
+  .landing-page {
+    padding-top: 56px;
+  }
+
+  .controls {
+    left: 10px;
+    bottom: 14px;
+    gap: 8px;
+  }
+
+  .controls button {
+    padding: 8px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+}
+
+/* CSS-only hamburger toggle styles */
+.nav-toggle{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-toggle-label{
+  display: none;
+  cursor: pointer;
+  width: 34px;
+  height: 28px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-toggle-label span{
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: white;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle-label{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+  }
+
+  /* hide inline headline links on small screens */
+  .headline{
+    display: none;
+  }
+
+  /* when checkbox is checked, show headline as vertical menu */
+  .nav-toggle:checked ~ .headline{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 5%;
+    background: rgba(0,0,35,0.98);
+    padding: 15px;
+    border-radius: 8px;
+    gap: 12px;
+    z-index: 1002;
+    min-width: 160px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+  }
+
+  .nav-toggle:checked ~ .headline a{
+    display: block;
+    padding: 8px 12px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-toggle:checked ~ .headline a:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-toggle:checked ~ .headline{
+    top: 56px;
+    right: 3%;
+    width: 94%;
+    left: 3%;
+    text-align: center;
+  }
+}
+
+/* position the hamburger inside the hero bar on the right */
+.hero-section .nav-toggle-label{
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 22px;
+  display: none; /* default hidden, shown in media queries */
+  z-index: 1003;
+}
+
+@media (max-width: 768px) {
+  .hero-section .nav-toggle-label{display:flex}
+}
+
+/* make label spans slightly larger for tap targets */
+.nav-toggle-label span{height:5px}
+
+/* ensure headline shown on larger screens remains in flow */
+@media (min-width: 769px){
+  .nav-toggle, .nav-toggle-label{display:none}
+  .headline{display:flex}
+}

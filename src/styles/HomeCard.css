@@ -447,14 +447,12 @@
 
 .move-left{
     transform:
-    translateX(-120px)
-    rotate(-2deg);
+    translateX(-645px);
 }
 
 .move-right{
     transform:
-    translateX(120px)
-    rotate(2deg);
+    translateX(645px);
 }
 
 /* MOBILE */

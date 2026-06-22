@@ -33,10 +33,12 @@
   background-size: contain;
 }
 
-.hero-name{
+.hero-name {
   font-size: 28px;
-  font-family:serif;
+  font-family: serif;
+  font-weight: bold;   /* or 700 */
 }
+
 
 
 .headline {

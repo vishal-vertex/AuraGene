@@ -174,7 +174,7 @@ const Contact = () => {
           <div className="contact-icon">📞</div>
           <div>
             <h3>Call Us</h3>
-            <p>+91 XXXXX XXXXX</p>
+            <p>+91 9655760580</p>
           </div>
         </div>
 
@@ -182,7 +182,7 @@ const Contact = () => {
           <div className="contact-icon">📧</div>
           <div>
             <h3>Email Us</h3>
-            <p>info@auragene.com</p>
+            <p>auragene.tech@gmail.com</p>
           </div>
         </div>
 
@@ -191,7 +191,7 @@ const Contact = () => {
           <div>
             <h3>Location</h3>
             <p>
-              AuraGene Technologies<br />
+              AuraGene Technology<br />
               Tamil Nadu, India
             </p>
           </div>

@@ -1,6 +1,8 @@
 import React from 'react'
 import {HomeCard, Abt, Contact, Projects} from './HomeCard'
 import AbtImg from "../assets/abt.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faXTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import '../styles/Home.css';
 
@@ -79,11 +81,19 @@ const Home = () => {
       </p>
 
       <div className="social-icons">
-        <div>f</div>
-        <div>x</div>
-        <div>in</div>
-        <div>ig</div>
-      </div>
+      <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faFacebook} size="2x" />
+      </a>
+      <a href="https://x.com/yourprofile" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faXTwitter} size="2x" />
+      </a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faLinkedin} size="2x" />
+      </a>
+      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faInstagram} size="2x" />
+      </a>
+    </div>
 
     </div>
 
@@ -115,10 +125,10 @@ const Home = () => {
 
       <h2>Contact</h2>
 
-      <p>📧 info@auragene.com</p>
-      <p>📞 +91 XXXXX XXXXX</p>
+      <p>📧 auragene.tech@gmail.com</p>
+      <p>📞 +91 9655760580</p>
       <p>📍 Tamil Nadu, India</p>
-      <p>🌐 www.auragene.com</p>
+      <a href='/'>🌐 auragene.vercel.app</a>
 
     </div>
 

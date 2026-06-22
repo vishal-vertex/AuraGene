@@ -205,36 +205,40 @@ const Contact = () => {
         <h1>Feel Free To Write Us</h1>
 
         <form
-          className="contact-form"
-          onSubmit={(e) => {
-            e.preventDefault();
+  className="contact-form"
+  onSubmit={async (e) => {
+    e.preventDefault(); // stop browser redirect
 
-            const left = document.querySelector(".contact-left");
-            const right = document.querySelector(".contact-right");
+    const left = document.querySelector(".contact-left");
+    const right = document.querySelector(".contact-right");
 
-            left.classList.add("move-right");
-            right.classList.add("move-left");
+    left.classList.add("move-right");
+    right.classList.add("move-left");
 
-            e.target.reset();
-          }}
-        >
-          <input type="text" placeholder="Enter your name" required />
+    const formData = new FormData(e.target);
 
-          <input type="email" placeholder="Enter your email" required />
+    // ✅ Send to Formspree via fetch
+    await fetch("https://formspree.io/f/mojoqlbe", {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    });
 
-          <input type="number" placeholder="Mobile Number" required />
+    // Reset after animation
+    setTimeout(() => {
+      e.target.reset();
+      alert("Message sent successfully!");
+    }, 500);
+  }}
+>
+  <input type="text" name="name" placeholder="Enter your name" required />
+  <input type="email" name="email" placeholder="Enter your email" required />
+  <input type="number" name="phone" placeholder="Mobile Number" required />
+  <textarea name="message" rows="6" placeholder="Write your message" required></textarea>
 
-          <textarea
-            rows="6"
-            placeholder="Write your message"
-            required
-          ></textarea>
+  <button type="submit">Submit</button>
+</form>
 
-          <button type="submit">
-            Submit
-          </button>
-
-        </form>
 
       </div>
 

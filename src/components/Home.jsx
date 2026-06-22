@@ -135,7 +135,7 @@ const Home = () => {
   </div>
 
   <div className="footer-bottom">
-    © 2026 AuraGene Technologies. All Rights Reserved.
+    © 2026 AuraGene Technology. All Rights Reserved.
   </div>
 
 </div>

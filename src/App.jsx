@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import heroImg from './assets/logo.png'
 import './App.css'
-
+import { Analytics } from '@vercel/analytics/react';
 import Hero from './components/Hero'
 import Home from './components/Home'
 
@@ -29,6 +29,7 @@ function App() {
           <Home />
         </>
       )}
+      <Analytics />
     </div>
   )
 }

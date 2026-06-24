@@ -1,5 +1,13 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../styles/HomeCard.css';
+import p1 from '../assets/projectGallery/p1.jpeg';
+import p2 from '../assets/projectGallery/p2.jpg';
+import p3 from '../assets/projectGallery/p3.jpg';
+import p4 from '../assets/projectGallery/p4.jpg';
+import p5 from '../assets/projectGallery/p5.jpg';
+import p6 from '../assets/projectGallery/p6.jpg';
+import p7 from '../assets/projectGallery/p7.jpg';
+import p8 from '../assets/projectGallery/p8.jpg';
 
 
 const HomeCard = () => {
@@ -247,6 +255,56 @@ const Contact = () => {
 }
 
 const Projects = () => {
+  const images = [p1, p2, p3, p4, p5, p6, p7, p8];
+  const [index, setIndex] = useState(0);
+  const [flip, setFlip] = useState(false);
+  const containerRef = useRef(null);
+  const intervalRef = useRef(null);
+  const inViewRef = useRef(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (!inViewRef.current) {
+              inViewRef.current = true;
+              // start slideshow
+              intervalRef.current = setInterval(() => {
+                setIndex((i) => (i + 1) % images.length);
+              }, 3000);
+            }
+          } else {
+            // stop slideshow when leaving view
+            if (intervalRef.current) {
+              clearInterval(intervalRef.current);
+              intervalRef.current = null;
+            }
+            inViewRef.current = false;
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    obs.observe(el);
+
+    return () => {
+      obs.disconnect();
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [images.length]);
+
+  // trigger flip animation on index change
+  useEffect(() => {
+    setFlip(true);
+    const t = setTimeout(() => setFlip(false), 700);
+    return () => clearTimeout(t);
+  }, [index]);
+
   return (
     <div className="project-wrapper">
 
@@ -254,9 +312,7 @@ const Projects = () => {
 
         <div className="project-left">
 
-          <div className="project-tag">
-            OUR PROJECTS
-          </div>
+          <div className="project-tag">OUR PROJECTS</div>
 
           <h1>
             Transforming Ideas Into
@@ -305,22 +361,18 @@ const Projects = () => {
 
         <div className="project-right">
 
-          <div className="project-image-placeholder">
-
-            PROJECT IMAGE
-
-            <br />
-
-            PLACEHOLDER
-
-          </div>
+          <div
+            ref={containerRef}
+            className={`project-image-placeholder ${flip ? 'flip' : ''}`}
+            style={{ backgroundImage: `url(${images[index]})` }}
+          ></div>
 
         </div>
 
       </div>
 
     </div>
-  )
-}
+  );
+};
 
 export { HomeCard, Abt, Contact, Projects }

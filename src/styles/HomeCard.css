@@ -619,6 +619,7 @@
     height:540px;
 
     border-radius:5px;
+    border: 1px solid black;
     background: url("../assets/projectGallery/p1.jpeg");
     background-size: cover;
     background-position: center;

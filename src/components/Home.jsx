@@ -1,19 +1,116 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {HomeCard, Abt, Contact, Projects} from './HomeCard'
 import AbtImg from "../assets/abt.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt, faUsers, faTrophy, faFlask } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt, faUsers, faTrophy, faFlask, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faXTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+import img1 from '../assets/homeGallery/home.png';
+import img2 from '../assets/homeGallery/services.png';
+import img3 from '../assets/homeGallery/system.png';
+import img4 from '../assets/homeGallery/technologies.png';
+
+import port1 from '../assets/homeGalleryPortrait/h1.jpeg';
+import port2 from '../assets/homeGalleryPortrait/h2.jpeg';
+import port3 from '../assets/homeGalleryPortrait/h3.jpeg';
+import port4 from '../assets/homeGalleryPortrait/h4.jpeg';
 
 import '../styles/Home.css';
 
 const Home = () => {
+  const landscapeImages = [img1, img2, img3, img4];
+  const portraitImages = [port1, port2, port3, port4];
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 50;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const images = isMobile ? portraitImages : landscapeImages;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [currentIndex, images]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
     <div>
-      <div class="home">Home</div>
-      <div class="content" id='home'></div>
+      <div className="home">Home</div>
+      <div className="content" id='home'>
+        <div className='divider'></div>
+        <div className="carousel">
+          <div 
+            className="carousel-track" 
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
+              >
+                <div className="carousel-frame">
+                  <img src={image} alt={`Slide ${index + 1}`} className="carousel-img" />
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {!isMobile && (
+            <>
+              <button className="carousel-control prev" onClick={prevSlide}>
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </button>
+              <button className="carousel-control next" onClick={nextSlide}>
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
+            </>
+          )}
+        </div>
+      </div>
 
-        <section id="about" style={{backgroundColor:"rgb(0, 17, 48)"}}>
+        <section id="about">
           <br />
           <br />
          

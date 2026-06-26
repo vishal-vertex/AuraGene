@@ -12,13 +12,125 @@
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom, rgba(255, 255, 255,1), rgba(255, 255, 255, 0.8));
+  background: transparent;
   position: relative;
   color: #000000;
-  padding-bottom: 2rem;
-  padding-top: 10%;
   z-index: 1;
+  overflow: hidden;
+  
 }
+
+.divider{
+  height: 75px; /* Matches navbar height */
+  width: 120%;
+  background-color: rgb(0, 0, 35);
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  filter: brightness(0.9) contrast(1.2) saturate(0.6);
+}
+
+/* Carousel Styles */
+.carousel {
+  width: 100%;
+  height: calc(100vh - 75px);
+  position: absolute;
+  top: 75px;
+  left: 0;
+  z-index: 0;
+  background-color: rgb(0, 0, 35);
+  overflow: hidden;
+  filter: brightness(0.9) contrast(1.2) saturate(0.6);
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-item {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-frame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  transition: transform 0.5s ease;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0.9) contrast(1.1);
+  transition: transform 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .carousel-frame {
+    width: 90%;
+    height: 80%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+  }
+
+  .carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0.85);
+  }
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  backdrop-filter: blur(5px);
+}
+
+.carousel-control:hover {
+  background: rgba(0, 17, 48, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control.prev {
+  left: 20px;
+}
+
+.carousel-control.next {
+  right: 20px;
+}
+
+
 
 
 section{
@@ -266,12 +378,15 @@ section > h1{
 
 #about{
     background-image: url("../assets/abt.png");
+    background-size: contain;
+    background-color:rgb(0, 0, 35);
     width: 100%;
+    background-position: 300px 0px;
+    background-repeat: no-repeat;
   height: auto;
-  filter: brightness(0.9) contrast(1.2) saturate(1);
+  filter: brightness(0.9) contrast(1.2) saturate(0.6);
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
-  box-shadow: 0 0 40px rgba(0, 225, 255, 0.4);
   transition: transform 0.4s ease, filter 0.4s ease;
   overflow: hidden;
 }
@@ -333,6 +448,6 @@ section > h1{
   }
 
   #about{
-    background-size: cover;
+    background-size: contain;
   }
 }

@@ -1,15 +1,22 @@
 /* Pages CSS - Styles for About, Services, Contact, and Project pages */
 
 /* ==================== GENERAL STYLES ==================== */
+:root {
+  --white: #ffffff;
+  --cyan: #00e5ff;
+  --dark-blue: #001a33;
+  --section-spacing: 8rem;
+}
+
 body {
-  background-color: white;
+  background-color: var(--white);
 }
 
 .page-container {
   min-height: 100vh;
   padding: 2rem;
-  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-  color: #fff;
+  background: linear-gradient(135deg, var(--dark-blue) 0%, #002d5a 100%);
+  color: var(--white);
 }
 
 .page-title {
@@ -27,26 +34,42 @@ body {
 /* ==================== ABOUT PAGE ==================== */
 .about-section {
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: var(--section-spacing) auto;
   padding: 3rem 2rem;
-  background: #f8f9fa;
+  background: var(--white);
+  border: 1px solid rgba(0, 229, 255, 0.1);
   border-radius: 15px;
-  color: #333;
+  color: var(--dark-blue);
   animation: slideIn 0.6s ease-out;
+  box-shadow: 0 10px 30px rgba(0, 26, 51, 0.05);
 }
 
 .about-section.alternate {
-  background: #e8f4f8;
+  background: linear-gradient(135deg, #f0fdff 0%, #e0faff 100%);
+  border-color: rgba(0, 229, 255, 0.1);
 }
 
 .about-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
   text-align: center;
-  color: #0066cc;
+  color: var(--dark-blue);
+  position: relative;
 }
 
-/* Team Grid */
+.about-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--cyan);
+  border-radius: 2px;
+}
+
+/* Team Grid (Hidden by About logic but kept for CSS integrity) */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -55,65 +78,56 @@ body {
 }
 
 .team-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2.5rem;
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInUp 0.6s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.2);
-}
-
-.team-avatar {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  display: inline-block;
-}
-
-.team-card h3 {
-  color: #0066cc;
-  margin-bottom: 0.5rem;
-}
-
-.team-card .role {
-  color: #666;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.team-card p {
-  color: #555;
-  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--cyan);
+  box-shadow: 0 15px 35px rgba(0, 229, 255, 0.1);
 }
 
 /* Expertise Grid */
 .expertise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .expertise-card {
-  background: white;
+  background: var(--white);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.1);
   transition: all 0.3s ease;
   animation: fadeInUp 0.6s ease-out;
+  color: var(--dark-blue);
+}
+
+.expertise-card h4 {
+  color: var(--dark-blue);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.expertise-card p {
+  color: #666;
+  font-size: 0.9rem;
 }
 
 .expertise-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
-  background: linear-gradient(135deg, #0066cc, #0052a3);
-  color: white;
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.3);
+  background: linear-gradient(135deg, var(--dark-blue), #002d5a);
+  color: var(--white);
 }
 
 .expertise-icon {
@@ -150,28 +164,29 @@ body {
 }
 
 .value-item {
-  background: white;
+  background: var(--white);
   padding: 2rem;
   border-radius: 12px;
-  border-left: 5px solid #0066cc;
+  border-left: 5px solid var(--cyan);
   transition: all 0.3s ease;
   animation: fadeInUp 0.6s ease-out;
+  color: var(--dark-blue);
 }
 
 .value-item:hover {
   transform: translateX(10px);
-  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.2);
 }
 
 .value-number {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #0066cc;
+  color: var(--cyan);
   margin-bottom: 1rem;
 }
 
 .value-item h3 {
-  color: #333;
+  color: var(--dark-blue);
   margin-bottom: 1rem;
 }
 
@@ -220,7 +235,7 @@ body {
 }
 
 .testimonial-author strong {
-  color: #0066cc;
+  color: var(--dark-blue);
 }
 
 .testimonial-author span {
@@ -232,15 +247,15 @@ body {
 /* ==================== CONTACT PAGE ==================== */
 .contact-info-section {
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: var(--section-spacing) auto;
   padding: 2rem;
 }
 
 .contact-info-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
   text-align: center;
-  color: #0066cc;
+  color: var(--dark-blue);
 }
 
 .contact-cards-grid {
@@ -251,14 +266,19 @@ body {
 }
 
 .contact-info-card {
-  background: linear-gradient(135deg, #0066cc, #0052a3);
-  color: white;
+  background: linear-gradient(135deg, var(--dark-blue), #002d5a);
+  color: var(--white);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 26, 51, 0.1);
   transition: all 0.3s ease;
   animation: fadeInUp 0.6s ease-out;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 229, 255, 0.2);
 }
 
 .contact-info-card:hover {
@@ -283,10 +303,10 @@ body {
 }
 
 .info-btn {
-  background: white;
-  color: #0066cc;
+  background: var(--cyan);
+  color: var(--dark-blue);
   border: none;
-  padding: 0.7rem 1.5rem;
+  padding: 0.8rem 2rem;
   border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
@@ -301,15 +321,15 @@ body {
 /* FAQ Section */
 .faq-section {
   max-width: 900px;
-  margin: 4rem auto;
+  margin: var(--section-spacing) auto;
   padding: 2rem;
 }
 
 .faq-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
   text-align: center;
-  color: #0066cc;
+  color: var(--dark-blue);
 }
 
 .faq-container {
@@ -327,8 +347,8 @@ body {
 }
 
 .faq-question {
-  background: linear-gradient(135deg, #0066cc, #0052a3);
-  color: white;
+  background: linear-gradient(135deg, var(--dark-blue), #002d5a);
+  color: var(--white);
   padding: 1.5rem;
   cursor: pointer;
   display: flex;
@@ -338,11 +358,12 @@ body {
 }
 
 .faq-question:hover {
-  background: linear-gradient(135deg, #0052a3, #003d7a);
+  background: linear-gradient(135deg, #002d5a, #003d7a);
 }
 
 .faq-icon {
   font-size: 1.5rem;
+  color: var(--cyan);
 }
 
 .faq-answer {
@@ -356,15 +377,15 @@ body {
 /* Response Time Section */
 .response-time-section {
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: var(--section-spacing) auto;
   padding: 2rem;
 }
 
 .response-time-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
   text-align: center;
-  color: #0066cc;
+  color: var(--dark-blue);
 }
 
 .response-grid {
@@ -374,25 +395,26 @@ body {
 }
 
 .response-card {
-  background: linear-gradient(135deg, #e8f4f8, #d0e8f2);
+  background: var(--white);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
-  border: 2px solid #0066cc;
+  border: 2px solid var(--cyan);
   transition: all 0.3s ease;
   animation: fadeInUp 0.6s ease-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .response-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.2);
-  background: linear-gradient(135deg, #0066cc, #0052a3);
-  color: white;
-  border-color: white;
+  box-shadow: 0 12px 30px rgba(0, 229, 255, 0.2);
+  background: linear-gradient(135deg, var(--dark-blue), #002d5a);
+  color: var(--white);
+  border-color: var(--cyan);
 }
 
 .response-card h3 {
-  color: #0066cc;
+  color: var(--dark-blue);
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }
@@ -418,9 +440,9 @@ body {
 }
 
 .project-filter-section h2 {
-  font-size: 2.2rem;
-  color: #0066cc;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: var(--dark-blue);
+  margin-bottom: 3rem;
 }
 
 .filter-buttons {
@@ -432,10 +454,10 @@ body {
 }
 
 .filter-btn {
-  padding: 0.7rem 1.5rem;
-  border: 2px solid #0066cc;
-  background: white;
-  color: #0066cc;
+  padding: 0.7rem 1.8rem;
+  border: 2px solid var(--cyan);
+  background: transparent;
+  color: var(--dark-blue);
   border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
@@ -444,8 +466,9 @@ body {
 
 .filter-btn:hover,
 .filter-btn.active {
-  background: #0066cc;
-  color: white;
+  background: var(--dark-blue);
+  border-color: var(--dark-blue);
+  color: var(--white);
   transform: scale(1.05);
 }
 
@@ -471,12 +494,12 @@ body {
 
 .project-showcase-card:hover {
   transform: translateY(-15px);
-  box-shadow: 0 12px 35px rgba(0, 102, 204, 0.3);
+  box-shadow: 0 12px 35px rgba(0, 229, 255, 0.2);
 }
 
 .project-card-header {
-  background: linear-gradient(135deg, #0066cc, #0052a3);
-  padding: 1rem;
+  background: linear-gradient(135deg, var(--dark-blue), #002d5a);
+  padding: 1.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -497,9 +520,9 @@ body {
 }
 
 .project-card-body h3 {
-  color: #0066cc;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
+  color: var(--dark-blue);
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
 }
 
 .project-description {
@@ -516,12 +539,13 @@ body {
 }
 
 .tech-tag {
-  background: #e8f4f8;
-  color: #0066cc;
+  background: #e0faff;
+  color: var(--dark-blue);
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: bold;
+  border: 1px solid rgba(0, 229, 255, 0.2);
 }
 
 .project-results {
@@ -545,10 +569,10 @@ body {
 }
 
 .project-view-btn {
-  background: linear-gradient(135deg, #0066cc, #0052a3);
-  color: white;
+  background: linear-gradient(135deg, var(--dark-blue), #002d5a);
+  color: var(--white);
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
@@ -562,13 +586,13 @@ body {
 }
 
 .project-cta {
-  background: linear-gradient(135deg, #0066cc, #0052a3);
-  color: white;
+  background: linear-gradient(135deg, var(--dark-blue), #002d5a);
+  color: var(--white);
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
   border-radius: 15px;
-  max-width: 800px;
-  margin: 3rem auto;
+  max-width: 900px;
+  margin: var(--section-spacing) auto;
 }
 
 .project-cta h2 {
@@ -582,12 +606,12 @@ body {
 }
 
 .cta-button {
-  background: white;
-  color: #0066cc;
+  background: var(--cyan);
+  color: var(--dark-blue);
   border: none;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -606,10 +630,10 @@ body {
 }
 
 .extended-services h2 {
-  font-size: 2.2rem;
-  color: #0066cc;
+  font-size: 2.5rem;
+  color: var(--dark-blue);
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 3.5rem;
 }
 
 .services-subtitle {
@@ -621,7 +645,7 @@ body {
 
 .services-grid-extended {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-bottom: 4rem;
 }
@@ -639,8 +663,8 @@ body {
 
 .service-card-extended:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.2);
-  border-color: #0066cc;
+  box-shadow: 0 12px 30px rgba(0, 229, 255, 0.2);
+  border-color: var(--cyan);
 }
 
 .service-card-extended.expanded {
@@ -659,8 +683,9 @@ body {
 }
 
 .service-card-header h3 {
-  color: #0066cc;
+  color: var(--dark-blue);
   margin: 0;
+  font-size: 1.4rem;
 }
 
 .service-short-desc {
@@ -687,7 +712,7 @@ body {
 }
 
 .service-features h4 {
-  color: #0066cc;
+  color: var(--dark-blue);
   margin-bottom: 1rem;
   font-size: 1rem;
 }
@@ -706,26 +731,27 @@ body {
 }
 
 .feature-check {
-  color: #0066cc;
+  color: var(--cyan);
   font-weight: bold;
   font-size: 1.2rem;
 }
 
 .service-price {
-  background: #e8f4f8;
+  background: var(--white);
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
-  color: #0066cc;
+  color: var(--dark-blue);
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
+  border: 1px solid var(--cyan);
 }
 
 .service-inquiry-btn {
-  background: linear-gradient(135deg, #0066cc, #0052a3);
-  color: white;
+  background: linear-gradient(135deg, var(--dark-blue), #002d5a);
+  color: var(--white);
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
@@ -740,7 +766,7 @@ body {
 
 .expand-indicator {
   text-align: center;
-  color: #0066cc;
+  color: var(--cyan);
   margin-top: 1rem;
   font-size: 0.9rem;
   transition: transform 0.3s ease;
@@ -748,18 +774,19 @@ body {
 
 /* Service Process */
 .service-process {
-  background: linear-gradient(135deg, #e8f4f8, #d0e8f2);
-  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--white), #f0fdff);
+  padding: 4rem 2rem;
   border-radius: 15px;
   max-width: 1200px;
   margin: 3rem auto;
+  border: 1px solid rgba(0, 229, 255, 0.1);
 }
 
 .service-process h2 {
-  color: #0066cc;
+  color: var(--dark-blue);
   text-align: center;
-  margin-bottom: 3rem;
-  font-size: 2rem;
+  margin-bottom: 4rem;
+  font-size: 2.5rem;
 }
 
 .process-steps {
@@ -785,12 +812,12 @@ body {
 .step-number {
   font-size: 2rem;
   font-weight: bold;
-  color: #0066cc;
+  color: var(--cyan);
   margin-bottom: 0.5rem;
 }
 
 .process-step h3 {
-  color: #0066cc;
+  color: var(--dark-blue);
   margin-bottom: 0.5rem;
 }
 
@@ -800,23 +827,23 @@ body {
 }
 
 .process-arrow {
-  color: #0066cc;
-  font-size: 2rem;
+  color: var(--cyan);
+  font-size: 2.5rem;
   display: none;
 }
 
 /* Why Choose Section */
 .why-choose-section {
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: 3rem auto;
   padding: 2rem;
 }
 
 .why-choose-section h2 {
-  font-size: 2.2rem;
-  color: #0066cc;
+  font-size: 2.5rem;
+  color: var(--dark-blue);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .why-choose-grid {
@@ -826,19 +853,19 @@ body {
 }
 
 .why-card {
-  background: linear-gradient(135deg, #0066cc, #0052a3);
-  color: white;
+  background: linear-gradient(135deg, var(--dark-blue), #002d5a);
+  color: var(--white);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 26, 51, 0.1);
   transition: all 0.3s ease;
   animation: fadeInUp 0.6s ease-out;
 }
 
 .why-card:hover {
   transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 8px 30px rgba(0, 102, 204, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.2);
 }
 
 .why-icon {
@@ -895,6 +922,10 @@ body {
 
 /* ==================== MOBILE RESPONSIVENESS ==================== */
 @media (max-width: 768px) {
+  .extended-services {
+    display: none;
+  }
+
   .about-section,
   .extended-services,
   .faq-section,
@@ -925,7 +956,6 @@ body {
   .testimonials-grid,
   .contact-cards-grid,
   .response-grid,
-  .services-grid-extended,
   .why-choose-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;

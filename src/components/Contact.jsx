@@ -37,60 +37,32 @@ const ContactFunc = () => {
       alignItems:"center",
       justifyContent:"center"
     }}>
-    <div style={{width:"100%", marginTop:"5%"}}>
+    <div style={{width:"100%", marginTop:"8%", display: "flex", flexDirection: "column", gap: "var(--section-spacing)"}}>
       <div id="contact" style={{
         justifyContent:"center",
         display:"flex",
-        flexWrap: "wrap"
+        flexWrap: "wrap",
+        margin: "0 auto"
       }}>
         <Contact></Contact>
       </div>
 
       {/* Contact Info Cards */}
-      <div className="contact-info-section">
-        <h2>Multiple Ways to Reach Us</h2>
-        <div className="contact-cards-grid">
-          <div className="contact-info-card">
-            <div className="info-icon">💬</div>
-            <h3>Live Chat</h3>
-            <p>Available Monday-Friday, 9 AM - 6 PM IST</p>
-            <button className="info-btn">Start Chat</button>
-          </div>
-          <div className="contact-info-card">
-            <div className="info-icon">📞</div>
-            <h3>Phone Support</h3>
-            <p>+91 9655760580</p>
-            <button className="info-btn">Call Now</button>
-          </div>
-          <div className="contact-info-card">
-            <div className="info-icon">📧</div>
-            <h3>Email Support</h3>
-            <p>auragene.tech@gmail.com</p>
-            <button className="info-btn">Email Us</button>
-          </div>
-          <div className="contact-info-card">
-            <div className="info-icon">🌐</div>
-            <h3>Social Media</h3>
-            <p>Follow us on LinkedIn, Twitter & GitHub</p>
-            <button className="info-btn">Connect</button>
-          </div>
-        </div>
-      </div>
+      
+      
 
       {/* FAQ Section */}
-      <div className="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div className="faq-container">
-          {faqs.map((faq) => (
-            <FAQItem key={faq.id} question={faq.question} answer={faq.answer} />
-          ))}
-        </div>
-      </div>
+      
 
       {/* Service Response Time */}
-      <div className="response-time-section">
+      <div className="response-time-section" style={{ margin: "0 auto",
+        
+       }}>
         <h2>Our Commitment to You</h2>
-        <div className="response-grid">
+        <div className="response-grid" style={{
+          display:"flex",
+        flexDirection:"row"
+        }}>
           <div className="response-card">
             <h3>⚡ Quick Response</h3>
             <p>We respond to inquiries within 2-4 hours during business hours</p>
@@ -108,6 +80,14 @@ const ContactFunc = () => {
             <p>Production systems monitored round-the-clock for optimal performance</p>
           </div>
         </div>
+        <div className="faq-section" style={{ margin: "0 auto" }}>
+        <h2>Frequently Asked Questions</h2>
+        <div className="faq-container">
+          {faqs.map((faq) => (
+            <FAQItem key={faq.id} question={faq.question} answer={faq.answer} />
+          ))}
+        </div>
+      </div>
       </div>
 
     </div>

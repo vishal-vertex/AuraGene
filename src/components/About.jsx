@@ -6,41 +6,20 @@ import "../styles/pages.css"
 const AboutFunc = () => {
   return (
     <>
-    <div id='about' style={{
-      marginTop:"8%",
-      backgroundPosition: "500px"
+    <div style={{
+      marginTop:"4%",
+      backgroundColor:'rgb(0, 0, 32, 1)',
+      
     }}>
-      <div>
+      <div id="about" style={{backgroundColor:'rgb(0,0,32)',
+      backgroundPosition: "500px",
+        padding:"30px"
+      }}>
         <Abt></Abt>
       </div>
-
-      {/* Team Section */}
-      <div className="about-section">
-        <h2>Our Expert Team</h2>
-        <div className="team-grid">
-          <div className="team-card">
-            <div className="team-avatar">👨‍💼</div>
-            <h3>Vishal</h3>
-            <p className="role">Founder & Lead Developer</p>
-            <p>Full-stack developer with expertise in React, Node.js, and cloud solutions. Passionate about creating innovative digital products.</p>
-          </div>
-          <div className="team-card">
-            <div className="team-avatar">👨‍💻</div>
-            <h3>Development Team</h3>
-            <p className="role">Backend & Frontend Specialists</p>
-            <p>Experienced developers specializing in enterprise software, API development, and scalable architecture.</p>
-          </div>
-          <div className="team-card">
-            <div className="team-avatar">🎨</div>
-            <h3>Design Team</h3>
-            <p className="role">UI/UX Designers</p>
-            <p>Creative designers focused on user experience, modern interfaces, and responsive design principles.</p>
-          </div>
-        </div>
-      </div>
-
+</div>
       {/* Expertise Section */}
-      <div className="about-section alternate">
+      <div className="about-section alternate" >
         <h2>Our Core Expertise</h2>
         <div className="expertise-grid">
           <div className="expertise-card">
@@ -77,10 +56,10 @@ const AboutFunc = () => {
       </div>
 
       {/* Values Section */}
-      <div className="about-section">
+      <div className="about-section" >
         <h2>Why Choose AuraGene?</h2>
-        <div className="values-container">
-          <div className="value-item">
+        <div className="values-container" >
+          <div className="value-item" >
             <div className="value-number">01</div>
             <h3>Innovation First</h3>
             <p>We embrace cutting-edge technologies and stay ahead of industry trends to deliver modern solutions.</p>
@@ -102,39 +81,8 @@ const AboutFunc = () => {
           </div>
         </div>
       </div>
-
-      {/* Testimonials */}
-      <div className="about-section alternate">
-        <h2>Client Testimonials</h2>
-        <div className="testimonials-grid">
-          <div className="testimonial-card">
-            <div className="stars">⭐⭐⭐⭐⭐</div>
-            <p>"AuraGene delivered our project on time and exceeded expectations. Their team is professional and innovative."</p>
-            <div className="testimonial-author">
-              <strong>- Business Owner</strong>
-              <span>Tech Startup</span>
-            </div>
-          </div>
-          <div className="testimonial-card">
-            <div className="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Outstanding work! They transformed our vision into a robust web platform that drives growth."</p>
-            <div className="testimonial-author">
-              <strong>- Project Manager</strong>
-              <span>E-Commerce Company</span>
-            </div>
-          </div>
-          <div className="testimonial-card">
-            <div className="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Excellent support and continuous improvements. AuraGene is our go-to partner for tech solutions."</p>
-            <div className="testimonial-author">
-              <strong>- CEO</strong>
-              <span>Financial Services</span>
-            </div>
-          </div>
-        </div>
-      </div>
      
-    </div>
+    
     </>
   )
 }

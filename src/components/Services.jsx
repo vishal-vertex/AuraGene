@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {HomeCard}from "./HomeCard"
 import "../styles/Home.css"
 import "../styles/pages.css"
 
 const ServiesFunc = () => {
-  const [expandedService, setExpandedService] = useState(null);
+
 
   const servicesDetails = [
     {
@@ -151,10 +151,19 @@ const ServiesFunc = () => {
         justifyContent:"center",
         display:"flex",
         width: "100%",
+        justifyContent:"center",
         flexDirection: "column"
       }}>
+        <div  style={{
+      backgroundColor:"white",
+      display:"flex",
+      alignItems:"center",
+      justifyContent:"center",
+      width: "100%"
+    }}>
+          <HomeCard></HomeCard>
+        </div>
         
-        <HomeCard></HomeCard>
 
         {/* Extended Services Section */}
         <div className="extended-services">
@@ -165,8 +174,7 @@ const ServiesFunc = () => {
             {servicesDetails.map(service => (
               <div 
                 key={service.id} 
-                className={`service-card-extended ${expandedService === service.id ? 'expanded' : ''}`}
-                onClick={() => setExpandedService(expandedService === service.id ? null : service.id)}
+                className="service-card-extended"
               >
                 <div className="service-card-header">
                   <div className="service-icon">{service.icon}</div>
@@ -175,32 +183,15 @@ const ServiesFunc = () => {
 
                 <p className="service-short-desc">{service.shortDesc}</p>
 
-                {expandedService === service.id && (
-                  <div className="service-expanded-content">
-                    <p className="service-full-desc">{service.fullDesc}</p>
-                    
-                    <div className="service-features">
-                      <h4>Key Features:</h4>
-                      <ul>
-                        {service.features.map((feature, idx) => (
-                          <li key={idx}>
-                            <span className="feature-check">✓</span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="service-price">
-                      <strong>{service.price}</strong>
-                    </div>
-
-                    <button className="service-inquiry-btn">Inquire Now</button>
-                  </div>
-                )}
-
-                <div className="expand-indicator">
-                  {expandedService === service.id ? '▼' : '▶'}
+                <div className="service-features">
+                  <ul>
+                    {service.features.slice(0, 3).map((feature, idx) => (
+                      <li key={idx}>
+                        <span className="feature-check">✓</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -240,7 +231,10 @@ const ServiesFunc = () => {
         {/* Why Choose Section */}
         <div className="why-choose-section">
           <h2>Why Choose Our Services?</h2>
-          <div className="why-choose-grid">
+          <div className="why-choose-grid" style={{
+            display:"flex",
+            flexDirection:"row"
+          }}>
             <div className="why-card">
               <div className="why-icon">✨</div>
               <h3>Expert Team</h3>

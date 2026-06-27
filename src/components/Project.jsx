@@ -73,16 +73,17 @@ const ProjectFunc = () => {
       width: "100%"
     }}>
       <div style={{
-        marginTop:"4%",
+        marginTop:"8%",
         justifyContent:"center",
         display:"flex",
         width: "100%",
-        flexDirection: "column"
+        flexDirection: "column",
+        gap: "var(--section-spacing)"
       }}>
         <Projects></Projects>
 
         {/* Project Filter Section */}
-        <div className="project-filter-section">
+        <div className="project-filter-section" style={{ margin: "0 auto" }}>
           <h2>Featured Projects</h2>
           <div className="filter-buttons">
             {projectCategories.map(category => (
@@ -98,7 +99,7 @@ const ProjectFunc = () => {
         </div>
 
         {/* Project Showcase Grid */}
-        <div className="projects-showcase">
+        <div className="projects-showcase" style={{ margin: "0 auto" }}>
           {filteredProjects.map(project => (
             <div key={project.id} className="project-showcase-card">
               <div className="project-card-header">
@@ -128,12 +129,7 @@ const ProjectFunc = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="project-cta">
-          <h2>Ready to Build Your Next Project?</h2>
-          <p>Let's discuss your ideas and turn them into reality</p>
-          <button className="cta-button">Get in Touch</button>
-        </div>
+       
       </div>
       
     </div>

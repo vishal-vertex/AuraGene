@@ -110,6 +110,10 @@ const Home = () => {
         </div>
       </div>
 
+      <div className="scroll-text">
+        <p>This</p>
+      </div>
+
         <section id="about">
           <br />
           <br />

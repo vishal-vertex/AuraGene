@@ -43,18 +43,21 @@
 
 .headline {
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
 }
 
-.headline a {
+.headline button {
   color: white;
   text-decoration: none;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: bold;
   transition: 0.3s ease;
+  background-color: transparent;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  border: none;
 }
 
-.headline a:hover {
+.headline button:hover {
   color: cyan;
   transform: scale(1.2);
 }

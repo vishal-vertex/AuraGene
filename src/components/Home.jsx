@@ -4,6 +4,8 @@ import AbtImg from "../assets/abt.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt, faUsers, faTrophy, faFlask, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faXTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import SEO from "./SEO";
+
 
 import img1 from '../assets/homeGallery/home.png';
 import img2 from '../assets/homeGallery/services.png';
@@ -74,6 +76,11 @@ const Home = () => {
 
   return (
     <div>
+     <SEO
+  title="Auragene Technologies | Web Development, SaaS, AI & Software Solutions"
+  description="Auragene Technologies delivers professional Web Development, SaaS Platforms, AI Automation, ERP Software, UI/UX Design, Mobile Applications, Cloud Solutions and Custom Software Development."
+  canonical="https://auragene.vercel.app/"
+/>
       <div className="home">Home</div>
       <div className="content" id='home'>
         <div className='divider'></div>
@@ -91,7 +98,18 @@ const Home = () => {
                 className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
               >
                 <div className="carousel-frame">
-                  <img src={image} alt={`Slide ${index + 1}`} className="carousel-img" />
+                 <img
+  src={image}
+  alt={
+    [
+      "Auragene Web Development Services",
+      "Auragene Software Development Services",
+      "Auragene Business Software Solutions",
+      "Auragene Technology Stack"
+    ][index]
+  }
+  className="carousel-img"
+/>
                 </div>
               </div>
             ))}
@@ -255,7 +273,13 @@ const Home = () => {
       <p>📧 auragene.tech@gmail.com</p>
       <p>📞 +91 9655760580</p>
       <p>📍 Tamil Nadu, India</p>
-      <a href='/'>🌐 auragene.vercel.app</a>
+      <a
+  href="https://auragene.vercel.app"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  🌐 auragene.vercel.app
+</a>
 
     </div>
 

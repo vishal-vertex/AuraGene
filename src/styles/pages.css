@@ -880,10 +880,6 @@ body {
 
 /* ==================== MOBILE RESPONSIVENESS ==================== */
 @media (max-width: 768px) {
-  .extended-services {
-    display: none;
-  }
-
   .about-section,
   .extended-services,
   .faq-section,
@@ -904,8 +900,9 @@ body {
   .project-filter-section h2,
   .service-process h2,
   .why-choose-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
   }
 
   .team-grid,
@@ -914,6 +911,7 @@ body {
   .testimonials-grid,
   .contact-cards-grid,
   .response-grid,
+  .services-grid-extended,
   .why-choose-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;

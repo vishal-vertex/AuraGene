@@ -1,0 +1,23 @@
+Auragene Technologies
+
+Founder:
+Vishal
+
+Website:
+https://auragene.vercel.app
+
+Email:
+auragene.tech@gmail.com
+
+Location:
+Tamil Nadu, India
+
+Technologies:
+Python
+React
+Node.js
+Express
+MongoDB
+Vite
+
+Made with ❤️ by Auragene Technologies

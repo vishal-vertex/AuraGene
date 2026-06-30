@@ -249,7 +249,7 @@ const ServiesFunc = () => {
               <div className="process-step">
                 <div className="step-number">03</div>
                 <h3>Execution</h3>
-                <p>Develop and build your solution.</p>
+                <p>Develop and build your solution with our team.</p>
               </div>
 
               <div className="process-arrow">→</div>
@@ -271,7 +271,7 @@ const ServiesFunc = () => {
                 <div className="why-icon">✨</div>
                 <h3>Expert Team</h3>
                 <p>
-                  Years of industry experience and cutting-edge expertise.
+                  Times of technical experience and cutting-edge expertise.
                 </p>
               </div>
 

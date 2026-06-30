@@ -27,6 +27,7 @@ function App() {
   }
 
   return (
+    
     <BrowserRouter>
       {/* ✅ Hero always visible */}
       <Hero />

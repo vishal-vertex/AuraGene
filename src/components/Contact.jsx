@@ -43,14 +43,7 @@ const ContactFunc = () => {
         canonical="https://auragene.vercel.app/contact"
       />
 
-      <div
-        style={{
-          backgroundColor: "white",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      
         <div
           style={{
             width: "100%",
@@ -126,7 +119,7 @@ const ContactFunc = () => {
             </div>
           </div>
         </div>
-      </div>
+     
     </>
   );
 };

@@ -15,7 +15,7 @@ const AboutFunc = () => {
       />
 
       
-       <div style={{marginTop:"4%"}}>
+       <div style={{marginTop:"6%"}}>
         <Abt />
        </div>
           

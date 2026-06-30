@@ -82,18 +82,10 @@ const ProjectFunc = () => {
         canonical="https://auragene.vercel.app/projects"
       />
 
-      <div
-        style={{
-          backgroundColor: "white",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-        }}
-      >
+      
         <div
           style={{
-            marginTop: "8%",
+            marginTop: "5%",
             justifyContent: "center",
             display: "flex",
             width: "100%",
@@ -180,7 +172,7 @@ const ProjectFunc = () => {
             ))}
           </div>
         </div>
-      </div>
+      
     </>
   );
 };

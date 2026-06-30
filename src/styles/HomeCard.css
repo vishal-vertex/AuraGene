@@ -772,6 +772,21 @@
     .project-image-placeholder{
         display: none !important;
     }
+
+    /* Hide about image and center content */
+    .about-image {
+        display: none !important;
+    }
+    .about-text h1, .about-text p {
+        text-align: center;
+    }
+    .about-tag {
+        margin: 0 auto 20px;
+    }
+    .about-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 
 /* ======================
@@ -834,16 +849,10 @@
     .about-content {
         flex-direction: column;
         gap: 30px;
+        padding: 20px;
     }
 
-    .image-placeholder {
-        width: 280px;
-        height: 280px;
-    }
-
-    .about-text h1 { font-size: 2.2rem; text-align: center; }
-    .about-text p { text-align: center; }
-    .about-stats { justify-content: center; flex-wrap: wrap; }
+    .about-text h1 { font-size: 2.2rem; }
     
     .contact-wrapper { flex-direction: column; width: 95%; }
     .contact-left, .contact-right { width: 100%; min-height: auto; padding: 25px; }

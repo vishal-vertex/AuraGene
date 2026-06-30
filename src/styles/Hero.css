@@ -283,6 +283,7 @@
   .nav-toggle:checked ~ .headline{
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center buttons horizontally */
     position: absolute;
     top: 60px;
     right: 5%;
@@ -296,14 +297,17 @@
     border: 1px solid rgba(0, 255, 255, 0.2);
   }
 
-  .nav-toggle:checked ~ .headline a{
+  .nav-toggle:checked ~ .headline button {
     display: block;
-    padding: 8px 12px;
+    width: 100%; /* Make buttons full width of the container for better clickable area */
+    text-align: center; /* Center the text inside the full-width buttons */
+    padding: 8px 0;
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    height: auto; /* Allow padding to define height */
   }
   
-  .nav-toggle:checked ~ .headline a:last-child {
+  .nav-toggle:checked ~ .headline button:last-child {
     border-bottom: none;
   }
 }
@@ -311,10 +315,10 @@
 @media (max-width: 420px) {
   .nav-toggle:checked ~ .headline{
     top: 56px;
-    right: 3%;
-    width: 94%;
-    left: 3%;
-    text-align: center;
+    right: 0;
+    width: 100%;
+    left: 0;
+    border-radius: 0; /* Full width menu on very small screens */
   }
 }
 

@@ -37,16 +37,15 @@ body {
   margin: var(--section-spacing) auto;
   padding: 3rem 2rem;
   background: rgb(0, 17, 48);
-  border-radius: 15px;
   color: var(--dark-blue);
   animation: slideIn 0.6s ease-out;
-  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.6);
+  box-shadow: 10px 10px 20px 1px rgb(0, 56, 58);
 }
 
 .about-section.alternate {
   background-color: rgb(0, 17, 48);
   border-color: rgb(0, 229, 255);
-  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.6);
+  box-shadow: 10px 10px 20px 1px rgb(0, 56, 58);
 }
 
 .about-section h2 {
@@ -105,12 +104,12 @@ body {
 .expertise-card {
   background: var(--white);
   padding: 2rem;
-  border-radius: 12px;
   text-align: center;
   border: 1px solid rgba(0, 229, 255, 0.1);
   transition: all 0.3s ease;
   animation: fadeInUp 0.6s ease-out;
   color: var(--dark-blue);
+  border-left: 5px solid var(--cyan);
 }
 
 .expertise-card h4 {
@@ -140,7 +139,7 @@ body {
 .expertise-card h4 {
   color: rgb(0, 17, 48);
   margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.3rem;  
 }
 
 .expertise-card:hover h4 {
@@ -167,7 +166,6 @@ body {
 .value-item {
   background: var(--white);
   padding: 2rem;
-  border-radius: 12px;
   border-left: 5px solid var(--cyan);
   transition: all 0.3s ease;
   animation: fadeInUp 0.6s ease-out;
@@ -177,6 +175,7 @@ body {
 .value-item:hover {
   transform: translateX(10px);
   box-shadow: 0 6px 20px rgba(0, 229, 255, 0.2);
+  background: linear-gradient(135deg, rgb(8, 110, 119), rgb(138, 255, 255));
 }
 
 .value-number {
@@ -342,12 +341,13 @@ body {
 }
 
 .response-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
 .response-card {
+  flex-grow: 1;
   background: var(--white);
   padding: 2rem;
   border-radius: 12px;
@@ -355,7 +355,7 @@ body {
   border: 2px solid var(--cyan);
   transition: all 0.3s ease;
   animation: fadeInUp 0.6s ease-out;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 10px 10px 20px 1px rgb(0, 56, 58);
 }
 
 .response-card:hover {
@@ -582,7 +582,8 @@ body {
   padding: 2rem;
   background-color: rgb(0, 17, 48);
   box-shadow: 0 4px 20px rgba(0, 255, 255, 0.6);
-  border-radius: 15px;
+  border-top: 5px solid var(--cyan);
+  border-bottom: 5px solid var(--cyan);
 }
 
 .extended-services h2 {
@@ -594,7 +595,7 @@ body {
 
 .services-subtitle {
   text-align: center;
-  color: #666;
+  color: #c7c7c7;
   margin-bottom: 3rem;
   font-size: 1.1rem;
 }
@@ -608,7 +609,6 @@ body {
 
 .service-card-extended {
   background: white;
-  border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -621,6 +621,7 @@ body {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0, 229, 255, 0.2);
   border-color: var(--cyan);
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .service-card-extended.expanded {
@@ -733,11 +734,11 @@ body {
 .service-process {
   background: rgb(0, 17, 48);
   padding: 4rem 2rem;
-  border-radius: 15px;
   max-width: 1200px;
   margin: 3rem auto;
-  border: 1px solid rgba(0, 229, 255, 0.1);
   box-shadow: 0 4px 20px rgba(0, 255, 255, 0.6);
+  border-top: 5px solid var(--cyan);
+  border-bottom: 5px solid var(--cyan);
 }
 
 .service-process h2 {
@@ -745,6 +746,7 @@ body {
   text-align: center;
   margin-bottom: 4rem;
   font-size: 2.5rem;
+
 }
 
 .process-steps {
@@ -758,7 +760,6 @@ body {
 .process-step {
   background: white;
   padding: 2rem;
-  border-radius: 10px;
   text-align: center;
   flex: 1;
   min-width: 180px;
@@ -805,16 +806,16 @@ body {
 }
 
 .why-choose-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
 .why-card {
+  flex: 1;
   background: linear-gradient(135deg, var(--dark-blue), #002d5a);
   color: var(--white);
   padding: 2rem;
-  border-radius: 12px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 26, 51, 0.1);
   transition: all 0.3s ease;
@@ -823,7 +824,8 @@ body {
 
 .why-card:hover {
   transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.2);
+  box-shadow: 10px 10px 20px 1px rgb(0, 56, 58);
+  background: linear-gradient(135deg, rgb(32, 98, 94), rgb(118, 205, 208));
 }
 
 .why-icon {

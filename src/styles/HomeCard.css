@@ -15,7 +15,7 @@
   flex: 1 1 calc(20% - 10px);
   height: 350px;
   width: 300px;
-  
+  border-radius: 50px;
   position: relative;
      /* parent is positioning context */
 }
@@ -113,7 +113,7 @@
   width: 100%;
   position: absolute;
   bottom: 0px;
-    border-radius: 5%;
+    border-radius: 2%;
     display: flex;
     justify-content: center;
     box-shadow: 10px 10px 20px 1px rgb(0, 56, 58);

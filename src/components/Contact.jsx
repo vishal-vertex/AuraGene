@@ -105,7 +105,7 @@ const ContactFunc = () => {
                 </p>
               </div>
             </div>
-
+<br />
             <div
               className="faq-section"
               style={{

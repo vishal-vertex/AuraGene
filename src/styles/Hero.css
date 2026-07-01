@@ -93,7 +93,7 @@
 
 .landing-page video {
   position: absolute;
-  top: 0;
+  top: 75px;
   left: 0;
 
   width: 100%;
@@ -101,7 +101,7 @@
 
   object-fit: cover;
 
-  filter: brightness(1.1) contrast(1.05) saturate(1.2);
+  
 
   z-index: 0;
 }
@@ -190,7 +190,11 @@
   }
 
   .landing-page {
-    padding-top: 60px; /* avoid content under fixed navbar */
+    padding-top: 0px; /* avoid content under fixed navbar */
+  }
+
+  .landing-page video {
+    top: 60px; /* adjust video position for smaller navbar */
   }
 
   .controls {
@@ -227,6 +231,10 @@
 
   .landing-page {
     padding-top: 56px;
+  }
+
+  .landing-page video {
+    top: 0px; /* adjust video position for smaller navbar */
   }
 
   .controls {

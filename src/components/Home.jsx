@@ -225,7 +225,7 @@ const Home = () => {
       </p>
 
       <div className="social-icons">
-      <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.facebook.com/profile.php?id=61591408539220" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faFacebook} size="2x" />
       </a>
       <a href="https://github.com/auragene" target="_blank" rel="noopener noreferrer">

@@ -228,7 +228,7 @@ const Home = () => {
       <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faFacebook} size="2x" />
       </a>
-      <a href="https://github.com/auragenetech" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/auragene" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faGithub} size="2x" />
       </a>
       <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">

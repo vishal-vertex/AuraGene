@@ -234,7 +234,7 @@ const Home = () => {
       <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faLinkedin} size="2x" />
       </a>
-      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/auragene.tech" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faInstagram} size="2x" />
       </a>
     </div>

@@ -233,7 +233,7 @@ const Home = () => {
   <FontAwesomeIcon icon={faWhatsapp} size="2x" />
 </a>
 
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/auragene" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faLinkedin} size="2x" />
       </a>
 

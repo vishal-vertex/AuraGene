@@ -10,6 +10,8 @@ import ContactFunc from './components/Contact'
 import ProjectFunc from './components/Project'
 import ServicesFunc from './components/Services'
 
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
   const [loading, setLoading] = useState(true)
 
@@ -33,6 +35,7 @@ function App() {
       <Hero />
 
       {/* ✅ Only page content changes */}
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutFunc />} />
